@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+body {
+  height: 720px;
+}
+.search-div {
+  position: fixed;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: white;
+  display: flex;
+  width: 100%;
+  top: 0;
+  padding: 10px;
+}
+.search-inp {
+  width: 230%;
+  background: rgba(128, 128, 128, 0.155);
+  border-radius: 5px;
+}
+.json-img {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  /* padding: 8px; */
+}
+.json-pic {
+  width: 115px;
+  padding: 3px;
+  height: 120px;
+}
+.footer {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.sticker {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  background: white;
+  padding: 10px 0;
+  /* background: rgba(0, 0, 0, 0.771); */
+}
+.search {
+  color: #000;
+}
+.menu-div {
+  padding-top: 40px;
+}
+.pix p {
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.menu-pic {
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.404);
+  text-align: center;
+}
+.left{
+  padding-top: 8px;
+  font-size: 25px;
+}
+.menu-text {
+  padding-left: 115px;
+}
+.menu-img {
+  padding-top: 10px;
+}
+.pix {
+  display: flex;
+}
+.pix p {
+  padding-left: 10px;
+}
+.pix img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.first i{
+  padding: 5px 15px 0 0;
+  color: rgba(0, 0, 0, 0.891);
+}
+.fan p {
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  padding: 2px 9px;
+}
+.img-head {
+  margin: 10px 0 0 0;
+}
+.img-cont {
+  display: flex;
+}
+.likee{
+  padding: 10px 0 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.caption{
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 0 0 10px;
+}
+.span{
+  font-size: 17px !important;
+}
+.current{
+  margin-bottom: 70px;
+}
+.img-head img {
+  width: 370px;
+}
+.img-icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 25px;
+}
+.likes {
+  font-size: 15px;
+  padding: 10px 0 0 10px;
+}
+.more {
+  display: flex;
+  padding-top: 10px;
+}
+.fan {
+  padding-right: 10px;
+  font-weight: bold;
+}
+.dot {
+  padding-right: 5px;
+}

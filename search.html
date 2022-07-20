@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="fontawesome5/fontawesome-free-5.15.3-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="searchstyle.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="img-src">
+      <div class="search-div">
+        <div class="search">
+          <input type="text" class="search-inp" placeholder="Search" />
+        </div>
+      </div>
+      <div class="json-img"></div>
+      <div class="current"></div>
+      <div class="sticker">
+        <div class="footer">
+          <a href="home.html" class="search"><i class="fas fa-home"></i></a>
+          <a href="search.html" class="search"><i class="fas fa-search"></i></a>
+          <i class="fas fa-video"></i>
+          <i class="fas fa-heart"></i>
+          <a href="profile.html" class="search"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+    <script>
+      let Json = [
+        {
+          id: 0,
+          username: "psg-official-page",
+          likes: 110,
+          caption: "Winning has always been the goal",
+          photo: "img/IMG_0272.JPG",
+          follow: true,
+        },
+        {
+          id: 1,
+          username: "messi-official",
+          likes: 221,
+          caption: "Football Royalty ",
+          photo: "img/IMG_0291.JPG",
+        },
+        {
+          id: 2,
+          username: "ybnl-fan-page",
+          likes: 99,
+          caption: "Gang Zone",
+          photo: "img/IMG_0313.JPG",
+        },
+        {
+          id: 3,
+          username: "nicki-minaj",
+          likes: 633,
+          caption: "The Queen Rapper",
+          photo: "img/IMG_0377.JPG",
+        },
+        {
+          id: 4,
+          username: "baby",
+          likes: 499,
+          caption: "Going wide asf",
+          photo: "img/IMG_0379.JPG",
+        },
+        {
+          id: 5,
+          username: "the-trio",
+          likes: 775,
+          caption: "female rappers",
+          photo: "img/IMG_0392.JPG",
+        },
+        {
+          id: 6,
+          username: "lil-uzi",
+          likes: 76,
+          caption: "New Album in a bit",
+          photo: "img/IMG_0415.JPG",
+        },
+        {
+          id: 7,
+          username: "schwarzenegger",
+          likes: 723,
+          caption: "Life Aint easy",
+          photo: "img/IMG_E0400.JPG",
+        },
+        {
+          id: 8,
+          username: "fave",
+          likes: 550,
+          caption: "beautifully made",
+          photo: "img/fave.JPG",
+        },
+        {
+          id: 9,
+          username: "adaoma-couture",
+          likes: 111,
+          caption: "design is passion",
+          photo: "img/adaoma.JPG",
+        },
+        {
+          id: 10,
+          username: "tega",
+          likes: 432,
+          caption: "worship the lord",
+          photo: "img/heni.JPG",
+        },
+        {
+          id: 11,
+          username: "flames-page",
+          likes: 999,
+          caption: "no stress zone",
+          photo: "img/val.JPG",
+        },
+        {
+          id: 12,
+          username: "chisom-goddess",
+          likes: 8975,
+          caption: "fragrance of beauty",
+          photo: "img/chisom.JPG",
+        },
+        {
+          id: 13,
+          username: "mmeso",
+          likes: 456,
+          caption: "strictly vibe",
+          photo: "img/mmeso.JPG",
+        },
+        {
+          id: 14,
+          username: "happiness-gold",
+          likes: 745,
+          caption: "in for the fun",
+          photo: "img/IMG_0415.JPG",
+        },
+        {
+          id: 15,
+          username: "babae-claire",
+          likes: 8976,
+          caption: "no teens",
+          photo: "img/babe.JPG",
+        },
+        {
+          id: 16,
+          username: "de-berry",
+          likes: 321,
+          caption: "smiles are a blessing",
+          photo: "img/berry.JPG",
+        },
+        {
+          id: 17,
+          username: "chukwu",
+          likes: 321,
+          caption: "lord is my strength",
+          photo: "img/jv.JPG",
+        },
+        {
+          id: 18,
+          username: "faizat",
+          likes: 321,
+          caption: "alhamduliah",
+          photo: "img/faizat.JPG",
+        },
+        {
+          id: 19,
+          username: "vi vi ana",
+          likes: 321,
+          caption: "self love",
+          photo: "img/vanessa.JPG",
+        },
+      ];
+
+      // let jsonImg = document.querySelector(".json-img");
+      let mapImg = Json.map((i) => {
+        return `<div class="img-cont">
+    <div class="post-img">
+    <img src="${i.photo}" class="json-pic" alt="" id=${i.id} />
+    </div>
+    </div>
+    `;
+      });
+      const jsonImg = document.querySelector(".json-img");
+      document.querySelector(".json-img").innerHTML = mapImg.join(" ");
+
+      const searchInput = document.querySelector(".search-inp");
+
+      searchInput.addEventListener("keyup", (e) => {
+        let searchedCaption = e.target.value.toLowerCase().trim();
+        console.log(searchedCaption);
+
+        let Jsonitem = Json.filter((f) => {
+          console.log(f.username);
+          if (f.username.includes(searchedCaption)) {
+            return f;
+          }
+        });
+        let searchedItem = Jsonitem.map((p) => {
+          return `<div class="img-cont">
+    <div class="post-img" id="${p.id}">
+    <img src="${p.photo}" class="json-pic" alt="" />
+    </div>
+    </div>
+    `;
+        });
+        document.querySelector(".json-img").innerHTML = searchedItem.join(" ");
+      });
+
+      const allPosts = [...document.querySelectorAll(".post-img")];
+
+      for (let index = 0; index < Json.length; index++) {
+        allPosts[index].addEventListener("click", function (e) {
+          console.log(e.target.id);
+
+          let id = e.target.id;
+
+          let postString = ` <div class="menu-div">
+            <div class="menu">
+        <div class="right">
+          <i class="fas fa-angle-left left"></i>
+        </div>
+        <div class="menu-text">
+          <h1>Explore</h1>
+        </div>
+        </div>
+        <div class="menu-img">
+          <div class="menu-pic">
+            <div class="pix">
+              <img src=${Json[id].photo} alt="" />
+              <p>${Json[id].username}</p>
+            </div>
+            <div class="more">
+              <div class="fan">
+                <p>Follow</p>
+              </div>
+              <div class="dot">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="img-div">
+          <div class="img-head">
+            <img src=${Json[id].photo} alt="" />
+          </div>
+          <div class="img-icon">
+            <div class="first">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-comment"></i>
+              <i class="fas fa-paper-plane"></i>
+            </div>
+            <div class="sec">
+              <i class="fas fa-bookmark"></i>
+            </div>
+          </div>
+          <div class="likee">
+            <p>${Json[id].likes} likes</p>
+          </div>
+          <div class="caption">
+            <p>${Json[id].username} <span class="span">${Json[id].caption}</span></p>
+          </div>
+        </div>
+      </div>
+      `;
+          jsonImg.style.display = "none";
+          let current = document.querySelector(".current");
+          current.innerHTML = postString;
+
+          let menuDiv = document.querySelector(".menu-div");
+          let leftAngle = document.querySelector(".left");
+
+          leftAngle.addEventListener("click", () => {
+            console.log("working");
+            current.style.display = "none";
+            jsonImg.style.display = "flex";
+          });
+        });
+      }
+
+      // const renderPost = (postId) => {
+      //   const post = Json.find((v) => v.id == postId);
+
+      // };
+      // const postAl = Json.find((eachPost) => eachPost.id == 11);
+      // console.log(postAl);
+
+      // allPosts.forEach((post_el) => {
+      //   post_el.addEventListener("click", () => {
+      //     document.querySelector(".json-img").style.display = "none";
+      //     renderPost(post_el.id);
+      //   });
+      // });
+    </script>
+  </body>
+</html>

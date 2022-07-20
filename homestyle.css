@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+  }
+.footer {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .sticker {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    background: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding: 10px 0 5px 0;
+    /* box-shadow: 2px 2px 2px gray; */
+    /* background: rgba(0, 0, 0, 0.771); */
+  }
+  .search {
+    color: #000;
+  }
